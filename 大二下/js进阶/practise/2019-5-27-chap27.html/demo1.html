@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var username = "wangsan";
+    if(true){
+        var username="lisi";
+    }
+    console.log(username);//lisi
+
+    let usernam = "wangsan";
+    if(true){
+        /*
+            let生命的变量会拥有块级作用域，作用范围不会超出这个块级作用域，不会影响全局变量
+        */
+        let usernam="lisi";
+        console.log(usernam);//lisi
+    }
+    console.log(usernam);//wangsan
+
+
+    /*
+        let、const 声明的变量，在声明前是不可用的
+    */
+    let userna = "aaaa";
+    
+</script>
+</html>

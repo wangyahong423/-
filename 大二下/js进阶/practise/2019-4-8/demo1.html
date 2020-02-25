@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+    //访问对象属性最通用的方法是中括号的形式。
+    var obj = {
+        "x":1,
+        "y":2
+    }
+    var z="age";
+    obj[z]= 20;//与obj.z=20的不同：obj.z=20之后的结果为z作为obj的属性名，而obj[z]= 20的结果则是用z的属性值作为obj的属性名
+    console.log(obj);
+    console.log(obj.x);
+    console.log(obj['y']);
+    */
+
+    //创建对象的方式1：通过对象字面量的方式直接创建对象
+    //创建对象的方式2：通过Object的create静态方法创建对象
+    var obj = {
+        "username":"zhangsan",
+        "age":20
+    };
+    var obj1 = Object.create(obj);
+    console.log(obj1);//obj1与obj的关系：obj1的原型是obj，以obj作为原型创建了一个新的对象obj1
+
+    //创建对象的方式3：通过构造函数的方式创建对象
+    function Person(username,age){//传统的构造函数
+        this.username = username;//this指的是通过实例化得到的对应的那个对象
+        this.age = age;
+        // this.sayHi = function(){
+        //     console.log(this.username);
+        // }不用每次调用的时候都添加一次，所以把它提取出去
+    }
+    Person.prototype.sayHi = function(){
+        console.log(this.username);
+    }
+    var person1 = new Person("zhangsan",20);
+    console.log(person1.__proto__ == Person.prototype);//true
+    var person2 = new Person("lisi",18);
+    person1.sayHi();
+    person2.sayHi();
+
+    /*
+        1、
+        var obj1 = {
+            属性名：属性值,
+            方法名：方法
+        }
+        2、
+        var obj1 = {};
+        var obj2 = Object.create(obj1);
+
+        3、
+        function Person(){};
+        var person1 = new Person();
+    */
+
+    
+</script>
+</html>

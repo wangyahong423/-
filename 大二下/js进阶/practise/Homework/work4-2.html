@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+        关系六：构造函数Foo是由Function实例化得到的，__proto__指向函数的原型对象，所以Foo的__proto__属性指向了
+        Foo的原型函数，即指向Function.prototype
+    */
+    var Foo = new Function();
+    var Object = new Function();
+    console.log(Foo.__proto__ == Function.prototype);//true
+
+    /*
+        关系十一：Object函数是由Function实例化出来的，__proto__指向函数的原型对象，所以Object的__proto__属性指向了
+        Object的原型函数，即指向Function.prototype
+    */
+    console.log(Object.__proto__ == Function.prototype);//true
+
+    /*
+        关系十三：constructor指的是指向该对象的构造函数，每个对象都有构造函数。
+        构造函数Function的prototype属性指的是函数的原型对象，而经过constructor指向该对象的构造函数，
+        所以Function.prototype.constructor == Function
+    */
+    console.log(Function.prototype.constructor == Function);//true
+
+    /*
+        关系十四：Function的__proto__和prototype都是指向Object的原型函数，所以指向相同
+    */
+    console.log(Function.__proto__ == Function.prototype);//true
+</script>
+</html>

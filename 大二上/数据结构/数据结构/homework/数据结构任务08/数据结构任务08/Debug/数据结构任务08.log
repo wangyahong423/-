@@ -1,0 +1,18 @@
+﻿  main.cpp
+e:\软件学院-qqdownload\大二上\数据结构\homework\数据结构任务08\数据结构任务08\main.cpp(32): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\vs2012\vc\include\stdio.h(290) : 参见“scanf”的声明
+e:\软件学院-qqdownload\大二上\数据结构\homework\数据结构任务08\数据结构任务08\main.cpp(37): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\vs2012\vc\include\stdio.h(290) : 参见“scanf”的声明
+e:\软件学院-qqdownload\大二上\数据结构\homework\数据结构任务08\数据结构任务08\main.cpp(42): error C2679: 二进制“=”: 没有找到接受“int”类型的右操作数的运算符(或没有可接受的转换)
+          e:\软件学院-qqdownload\大二上\数据结构\homework\数据结构任务08\数据结构任务08\main.cpp(20): 可能是“ArcCell &ArcCell::operator =(const ArcCell &)”
+          尝试匹配参数列表“(ArcCell, int)”时
+e:\软件学院-qqdownload\大二上\数据结构\homework\数据结构任务08\数据结构任务08\main.cpp(49): error C3861: “LocateVex”: 找不到标识符
+e:\软件学院-qqdownload\大二上\数据结构\homework\数据结构任务08\数据结构任务08\main.cpp(50): error C3861: “LocateVex”: 找不到标识符
+e:\软件学院-qqdownload\大二上\数据结构\homework\数据结构任务08\数据结构任务08\main.cpp(52): error C2679: 二进制“=”: 没有找到接受“int”类型的右操作数的运算符(或没有可接受的转换)
+          e:\软件学院-qqdownload\大二上\数据结构\homework\数据结构任务08\数据结构任务08\main.cpp(20): 可能是“ArcCell &ArcCell::operator =(const ArcCell &)”
+          尝试匹配参数列表“(ArcCell, int)”时
+e:\软件学院-qqdownload\大二上\数据结构\homework\数据结构任务08\数据结构任务08\main.cpp(53): error C2679: 二进制“=”: 没有找到接受“int”类型的右操作数的运算符(或没有可接受的转换)
+          e:\软件学院-qqdownload\大二上\数据结构\homework\数据结构任务08\数据结构任务08\main.cpp(20): 可能是“ArcCell &ArcCell::operator =(const ArcCell &)”
+          尝试匹配参数列表“(ArcCell, int)”时
+e:\软件学院-qqdownload\大二上\数据结构\homework\数据结构任务08\数据结构任务08\main.cpp(68): error C2086: “bool visited[100]”: 重定义
+          e:\软件学院-qqdownload\大二上\数据结构\homework\数据结构任务08\数据结构任务08\main.cpp(10) : 参见“visited”的声明

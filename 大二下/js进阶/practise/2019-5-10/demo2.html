@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+        分组可以看做当前正则表达式的子规则，
+        分组匹配得到的内容，可以再exec方法调用的返回结果中查看。
+        
+    */
+    var reg1 = /(abc)\d/gi;
+    var reg2 = /(ab\d)\d/gi;
+    var str = "abc1efg2";
+    var result = reg1.exec(str);
+    var result2 = reg2.exec(str);
+    //exec()方法在一个指定字符串中执行一个搜索匹配,返回一个结果数组或 null。
+    console.log(result);
+    console.log(result2);
+
+    var reg3 = /(ab\d)(\def)\d/gi;
+    var str1 = "ab32ef12";
+    var result3 = reg3.exec(str1);
+    console.log(result3);
+
+    /*
+        反向引用，通过 \m 来引用前面出现的分组
+        m 表示前面出现的第几个分组
+    */
+    var reg4 = /(ss)a\1/gi;
+    var reg5 = /(\d)a(\d)/gi;
+
+
+    var str5 = "ssassji";
+    var aa = str5.replace(reg4,"x");
+    console.log(aa);
+
+
+
+</script>
+</html>

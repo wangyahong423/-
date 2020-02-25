@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1" style="width:100px;height:50px"></div>
+</body>
+<script>
+    var div1 = document.getElementById("div1");
+    var username = "zhangsan";
+    div1.onclick = function(){
+        this.innerHTML = username;
+    }
+    function foo(){
+        div1.onclick = function(){
+            this.innerHTML = username;
+        }
+    }
+
+    //立即执行函数
+    //(function 函数名(参数){
+        //函数体
+    //}(实参))
+    (function max(x,y){
+        return x>y?x:y;
+    }(2,3));
+
+    function max(x,y){
+        return x>y?x:y;
+    }
+    max(2,3);
+
+    // 匿名函数
+    (function min(a,b){
+        return a>b?a:b;
+    })(2,3);
+
+
+    //变量污染
+    var userId = 2;
+    document.onclick = function(){
+        alert(userId);
+    }
+    if(true){
+        var userId = 20;
+    }
+    //立即结构
+    (function(){
+        if(true){
+            var userId = 20;
+        }
+    })()
+
+    //通过TTFE对变量存储的改变
+    function foo(){
+        var arr1 = [];
+        for(var i = 0;i<10;i++){
+            arr1[i] = function(){
+                return i;
+            }
+        }
+        return arr1;
+    }
+    var arr2 = foo();
+    arr2[3]();//10
+    //改正：
+    function foo(){
+        var arr1 = [];
+        for(var i = 0;i<10;i++){
+            //形成十个作用域，作用域内的j值各不相同，并且不共享
+            (function(j){
+                arr1[j] = function(){
+                    return j;
+                };
+            })(i);
+        }
+        return arr1;
+    }
+    var arr2 = foo();
+    arr2[3]();//3
+</script>
+</html>

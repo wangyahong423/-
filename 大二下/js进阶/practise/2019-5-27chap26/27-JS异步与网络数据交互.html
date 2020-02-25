@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//同步任务:在主线程上排队执行的任务，只有前一个任务执行完毕，才能执行后一个任务
+	// 异步任务:不进入主线程、而进入"任务队列"(task queue)的任务，只有等主线程任务执 行完毕，"任务队列"开始通知主线程，请求执行任务，该任务才会进入主线程执行
+
+	//同步
+	for(var i = 0;i<10000000000000000000000000;i++){
+
+	}
+	console.log("前面的执行完了后面的才能执行 同步执行");
+
+	//异步
+	//先执行主程序，等时间到了去执行它
+	setTimeout(function(){
+		console.log("异步执行");
+	},10000);
+	console.log("主程序");
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1558053787&di=d7769bd1e2b69b73496b54b81ce841f9&src=http://img4q.duitang.com/uploads/item/201501/20/20150120214431_SN4Bt.png">
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    //给图片添加边框
+    // $("img").css("border","10px solid purple");
+    
+    //在图片上移动鼠标时，给图片添加边框
+    $("img").mouseover(function(){
+        // this.style.border = "5px solid purple";或者写成下一方式
+        $(this).css("border","10px solid purple");
+    })
+    $("img").mouseout(function(){
+        // this.style.border = "5px solid purple";或者写成下一方式
+        $(this).css("border","10px solid white");
+    })
+</script>
+</html>

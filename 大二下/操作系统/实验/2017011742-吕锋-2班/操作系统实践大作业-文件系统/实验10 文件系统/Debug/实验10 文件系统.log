@@ -1,0 +1,23 @@
+﻿  FileManage.c
+E:\操作系统\201X00000X-张三-X班\操作系统实践大作业-文件系统\实验10 文件系统\FileManage.c(21): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  D:\Windows Kits\10\Include\10.0.17763.0\ucrt\stdio.h(1274): note: 参见“scanf”的声明
+E:\操作系统\201X00000X-张三-X班\操作系统实践大作业-文件系统\实验10 文件系统\FileManage.c(27): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  D:\Windows Kits\10\Include\10.0.17763.0\ucrt\stdio.h(1274): note: 参见“scanf”的声明
+E:\操作系统\201X00000X-张三-X班\操作系统实践大作业-文件系统\实验10 文件系统\FileManage.c(41): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  D:\Windows Kits\10\Include\10.0.17763.0\ucrt\stdio.h(1274): note: 参见“scanf”的声明
+E:\操作系统\201X00000X-张三-X班\操作系统实践大作业-文件系统\实验10 文件系统\FileManage.c(48): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  D:\Windows Kits\10\Include\10.0.17763.0\ucrt\stdio.h(1274): note: 参见“scanf”的声明
+E:\操作系统\201X00000X-张三-X班\操作系统实践大作业-文件系统\实验10 文件系统\FileManage.c(55): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  D:\Windows Kits\10\Include\10.0.17763.0\ucrt\stdio.h(1274): note: 参见“scanf”的声明
+E:\操作系统\201X00000X-张三-X班\操作系统实践大作业-文件系统\实验10 文件系统\FileManage.c(7): warning C4101: “i”: 未引用的局部变量
+E:\操作系统\201X00000X-张三-X班\操作系统实践大作业-文件系统\实验10 文件系统\FileManage.c(77): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  D:\Windows Kits\10\Include\10.0.17763.0\ucrt\string.h(133): note: 参见“strcpy”的声明
+E:\操作系统\201X00000X-张三-X班\操作系统实践大作业-文件系统\实验10 文件系统\FileManage.c(81): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  D:\Windows Kits\10\Include\10.0.17763.0\ucrt\string.h(133): note: 参见“strcpy”的声明
+E:\操作系统\201X00000X-张三-X班\操作系统实践大作业-文件系统\实验10 文件系统\FileManage.c(82): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  D:\Windows Kits\10\Include\10.0.17763.0\ucrt\string.h(133): note: 参见“strcpy”的声明
+E:\操作系统\201X00000X-张三-X班\操作系统实践大作业-文件系统\实验10 文件系统\FileManage.c(150): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  D:\Windows Kits\10\Include\10.0.17763.0\ucrt\stdio.h(1274): note: 参见“scanf”的声明
+E:\操作系统\201X00000X-张三-X班\操作系统实践大作业-文件系统\实验10 文件系统\FileManage.c(151): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  D:\Windows Kits\10\Include\10.0.17763.0\ucrt\string.h(133): note: 参见“strcpy”的声明
+  实验10 文件系统.vcxproj -> E:\操作系统\201X00000X-张三-X班\操作系统实践大作业-文件系统\Debug\实验10 文件系统.exe

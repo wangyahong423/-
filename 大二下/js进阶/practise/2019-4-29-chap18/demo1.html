@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //例一
+    var arr1 = ['a','b','c','d'];
+    var arr2 = arr1;//如果改了arr1里边的元素。arr2会不会改变？————会,数组是引用类型的变量
+    arr1[0]='e';
+    console.log(arr2);
+//例二
+    var brr1=[,2,,4];
+    Array.prototype.min = function(){
+        return "最小值";
+    }
+    console.log(brr1.length);
+    for(var i in brr1){
+        console.log(i,brr1[i]);
+    }
+//例三
+    var table = new Array(5);
+    for(var i =0;i<table.length;i++){
+        table[i] = new Array(5);
+    }
+    for(var row =0;row<table.length;row++){
+        for(var col=0;col.length;col++){
+            table[row][col] = row*col;
+        }
+    }
+    var product = table[2][4];
+
+    //例四
+    //Array.prototype.reverse()
+    var crr1 = [1,2,3];
+    crr1.reverse();
+    console.log(crr1);
+    //Array.prototype.sort(compareFunction？)——从小到大排序
+    crr1.sort();
+    console.log(crr1);
+
+    //例五：从小到大排序
+    /*
+        1、判断方法是静态方法还是原型方法；
+        2、确定这个方法是用来做什么的：
+           （1）是否会对原数组产生影响；
+           （2）最终的作用效果会是什么样子的；
+        3、判断方法的参数分别是什么；
+           （1）如果参数是回调函数的形式，还需要判断回掉函数的参数是什么；
+           （2）如果是值类型参数，判断参数所代表的意义。
+        4、确定方法调用的返回值
+    */
+    var crr2 = [5,6,2];
+    function compareNumbers(a,b){
+        return a-b;
+    }
+    crr2.sort(compareNumbers);
+    console.log(crr2);
+</script>
+</html>

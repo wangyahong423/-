@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var point={
+        x:0,
+        y:0,
+        moveTo:function(x,y){
+            var that=this;//this的软绑定，this无法穿透下面的方法，所以用that存this
+            function moveToX(x){
+                console.log(this);
+                this.x=x;
+            }
+            function moveToY(y){
+                console.log(this);
+                this.y=y;
+            }
+            moveToX(x);
+            moveToY(y);
+        }
+    }
+    /*对象内部的函数，存在嵌套关系时，内部函数的this指向window对象*/
+    point.moveTo(10,10);
+    console.log(point);
+</script>
+</html>

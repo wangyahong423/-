@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+        本地时间：当前所处时区的标准时间
+        世界标准时间：UTC(格林威治时间) GMT  
+    */
+    var seconds = Date.parse("2019-05-05");//parse将时间转换为以毫秒为单位的数字
+    console.log(seconds);
+    var date1 = new Date(seconds);//将seconds转换为标准时间
+    console.log(date1);
+
+    var date2 = new Date();
+    var seconds2 = Date.parse(date2);
+    console.log(date2 > date);
+</script>
+</html>

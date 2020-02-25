@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    这是一个网页    
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    /*
+        Ajax可以以异步的方式实现前后端数据的交互
+    */
+
+
+    //前端通过发起Ajax请求的方式，来从服务器获取数据
+    //请求方式有get请求和post请求
+    $.get("./server.php",function(res){
+        console.log(res);
+        $("body").html(res);
+    })
+</script>
+</html>

@@ -1,0 +1,3 @@
+﻿  main.cpp
+e:\软件学院-qqdownload\大二上\数据结构\homework\consoleapplication7\consoleapplication7\main.cpp(25): warning C4800: “HString *”: 将值强制为布尔值“true”或“false”(性能警告)
+  ConsoleApplication7.vcxproj -> E:\软件学院-QQDownload\大二上\数据结构\homework\ConsoleApplication7\Debug\ConsoleApplication7.exe

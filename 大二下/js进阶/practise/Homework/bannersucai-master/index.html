@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css" />
+</head>
+<body>
+        <div class="jsjy_LL" id="picList" style="position:relative;left: 50%;margin-left: -175px;">
+            <div style="position:absolute">
+                <a href="#" target=_blank><img src="./img/1.jpg" class="ysjy_img" width="350px" height="200px" /></a>
+                <p class="jsjy_LL_title">我校召开2018-2020届家长委员会大会</p>
+            </div>
+            <div style="position:absolute">
+                <a href="#" target=_blank><img src="./img/2.jpg" class="ysjy_img" width="350px" height="200px" /></a>
+                <p class="jsjy_LL_title">传递五四精神 铸就青春华章——我校举行纪...</p>
+            </div>
+            <div style="position:absolute">
+                <a href="#" target=_blank><img src="./img/3.png" class="ysjy_img" width="350px" height="200px" /></a>
+                <p class="jsjy_LL_title">2019十大最受欢迎班主任</p>
+            </div>
+            <ul style="position:absolute;" id="itemlist">                
+                <li class="active">
+                    <a href="##">1</a>
+                </li>
+                <li>
+                    <a href="##">2</a>
+                </li>
+                <li>
+                    <a href="##">3</a>
+                </li>
+            </ul>
+        </div>
+</body>
+<script>
+    (function(w,d){
+        function Carousel(container,itemlist,time){
+            this.container = d.getElementById(container).children;//获取每个图片所在的div数组
+            this.li_list = d.getElementById(itemlist).children;//获取每个图片所对应的li的数组
+            this.time = time;//获取传入的时间
+        }
+        Carousel.prototype.showImages = function(){
+            var temp=0;//标志位
+            var that = this;
+            var timer = function(){
+                for(var i=0;i<that.li_list.length;i++){
+                    that.li_list[i].className='';
+                    that.container[i].style.display = "none";
+                }
+                if(temp==0){
+                    that.li_list[0].className='active';
+                    that.container[0].style.display = "block";
+                    temp++;
+                }
+                else if(temp==1){
+                    that.li_list[1].className='active';
+                    that.container[1].style.display = "block";
+                    temp++;
+                }
+                else{
+                    that.li_list[2].className='active';
+                    that.container[2].style.display = "block";
+                    temp=0;
+                }
+            }
+            var interval = setInterval(timer,1000);
+            for(var i=0;i<that.li_list.length;i++){
+                (function(i){
+                    that.li_list[i].onmouseover = function(){
+                        that.li_list[i].style.cursor = "pointer";
+                        for(var j=0;j<that.li_list.length;j++){
+                            //发生鼠标移动时间时，先将所有的图片以及li的效果都清除
+                            that.li_list[j].className = '';
+                            that.container[j].style.display = "none";
+                        }
+                        //清除所有效果之后，再给当前移动的li添加效果
+                        that.li_list[i].className = 'active';
+                        that.container[i].style.display = "block";
+                        clearInterval(interval);
+                    }
+                    that.li_list[i].onmouseout = function(){
+                        interval = setInterval(timer,1000);
+                    }
+                })(i);
+                
+            }
+            (function(){
+                interval();
+            })
+        }
+        window.Carousel = Carousel;
+        //代码都放在闭包环境下，外界访问不了里面的变量和方法,
+        //所以把Carousel强行暴露出去，就可以在window访问到。
+    })(window,document)
+    var carousel = new Carousel("picList","itemlist",2000);
+    carousel.showImages();
+
+
+    // (function(w,d) {
+    // function Carousel(id, images, word, itemlist, time) {
+    //     this.id = id;//图片所在div的id
+    //     this.images = images;//图片的class名
+    //     this.word = word;//与图片对应的文字
+    //     this.itemlist = itemlist.children;//通过父元素获取li数组
+    //     this.time = time;//获取时间
+    //     this.interval;
+    //     this.imgLen = images.length;//图片长度
+    //     this.imgNum = 0;
+    //     this.showImages(2);
+    //     this.autoShow();
+    //     this.addMouseEvent();
+    // }
+
+    // Carousel.prototype.showImages = function(img) {
+    //     //在Carousel原型链上添加showImages方法，实现图片的转换轮播
+    //     //首先传入了img=0，此时第一张图片及其所对应的文字的透明度应该为1，及其所对应的li应该添加class名
+    //     this.images[img].style.opacity = 1;
+    //     this.word[img].style.opacity = 1;
+    //     this.itemlist[img].classList.add("active");
+    //     this.imgNum = img;//当前所呈现的图片的下标
+    //     for(var i = 0; i < this.imgLen; i++) {
+    //         if(i != img) {
+    //             this.images[i].style.opacity = 0;
+    //             this.word[i].style.opacity = 0;
+    //             this.itemlist[i].classList.remove("active");
+    //         }
+    //     }
+    // }
+
+    // //给轮播图添加鼠标事件（移动/移出）
+    // Carousel.prototype.addMouseEvent = function() {
+    //     var that = this;
+    //     for(var i = 0; i < this.imgLen; i++) {
+    //         (function(i) {
+    //             that.itemlist[i].onmouseover = function() {
+    //                 clearInterval(that.interval);
+    //                 that.showImages(i);
+    //             }
+    //             that.itemlist[i].onmouseout = function() {
+    //                 clearInterval(that.interval);
+    //                 that.interval = setInterval(that.intervalShow.bind(that), that.time);
+    //             }
+    //         })(i);
+    //     }
+    // }
+
+    // Carousel.prototype.intervalShow = function() {
+    //     this.imgNum = this.imgNum == this.imgLen - 1 ? 0 : this.imgNum + 1;
+    //     this.showImages(this.imgNum);
+    // }
+
+    // Carousel.prototype.autoShow = function() {
+    //     this.interval = setInterval(this.intervalShow.bind(this), this.time);
+    // }
+
+    // window.Carousel = Carousel;
+    // })(window, document);
+
+    // var carousel = new Carousel(document.getElementById("picList"),document.getElementsByClassName("ysjy_img"),document.getElementsByClassName("jsjy_LL_title"),document.getElementById("itemlist"),2500); 
+    // carousel.intervalShow();
+
+</script>
+
+</html>

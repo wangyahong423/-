@@ -1,0 +1,6 @@
+﻿  main.cpp
+e:\软件学院-qqdownload\大二上\数据结构\homework\冒泡排序-升级版\冒泡排序-升级版\main.cpp(58): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\vs2012\vc\include\stdio.h(290) : 参见“scanf”的声明
+e:\软件学院-qqdownload\大二上\数据结构\homework\冒泡排序-升级版\冒泡排序-升级版\main.cpp(62): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\vs2012\vc\include\stdio.h(290) : 参见“scanf”的声明
+  冒泡排序-升级版.vcxproj -> E:\软件学院-QQDownload\大二上\数据结构\homework\冒泡排序-升级版\Debug\冒泡排序-升级版.exe

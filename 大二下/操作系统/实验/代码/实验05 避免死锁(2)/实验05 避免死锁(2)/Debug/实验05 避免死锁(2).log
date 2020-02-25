@@ -1,0 +1,21 @@
+﻿  ProPCB.cpp
+e:\软件学院-qqdownload\大二下\操作系统\实验\代码\实验05 避免死锁(2)\实验05 避免死锁(2)\propcb.cpp(174): error C2059: 语法错误:“}”
+  main.cpp
+e:\软件学院-qqdownload\大二下\操作系统\实验\代码\实验05 避免死锁(2)\实验05 避免死锁(2)\main.cpp(6): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\软件学院-qqdownload\大二下\操作系统\vs2012\vc\include\string.h(110) : 参见“strcpy”的声明
+e:\软件学院-qqdownload\大二下\操作系统\实验\代码\实验05 避免死锁(2)\实验05 避免死锁(2)\main.cpp(14): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\软件学院-qqdownload\大二下\操作系统\vs2012\vc\include\string.h(110) : 参见“strcpy”的声明
+e:\软件学院-qqdownload\大二下\操作系统\实验\代码\实验05 避免死锁(2)\实验05 避免死锁(2)\main.cpp(22): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\软件学院-qqdownload\大二下\操作系统\vs2012\vc\include\string.h(110) : 参见“strcpy”的声明
+e:\软件学院-qqdownload\大二下\操作系统\实验\代码\实验05 避免死锁(2)\实验05 避免死锁(2)\main.cpp(30): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\软件学院-qqdownload\大二下\操作系统\vs2012\vc\include\string.h(110) : 参见“strcpy”的声明
+e:\软件学院-qqdownload\大二下\操作系统\实验\代码\实验05 避免死锁(2)\实验05 避免死锁(2)\main.cpp(38): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\软件学院-qqdownload\大二下\操作系统\vs2012\vc\include\string.h(110) : 参见“strcpy”的声明
+e:\软件学院-qqdownload\大二下\操作系统\实验\代码\实验05 避免死锁(2)\实验05 避免死锁(2)\main.cpp(51): warning C4101: “PcbName”: 未引用的局部变量
+e:\软件学院-qqdownload\大二下\操作系统\实验\代码\实验05 避免死锁(2)\实验05 避免死锁(2)\main.cpp(51): warning C4101: “chioce”: 未引用的局部变量
+  ChainList.cpp
+e:\软件学院-qqdownload\大二下\操作系统\实验\代码\实验05 避免死锁(2)\实验05 避免死锁(2)\chainlist.cpp(6): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\软件学院-qqdownload\大二下\操作系统\vs2012\vc\include\string.h(110) : 参见“strcpy”的声明
+e:\软件学院-qqdownload\大二下\操作系统\实验\代码\实验05 避免死锁(2)\实验05 避免死锁(2)\chainlist.cpp(14): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\软件学院-qqdownload\大二下\操作系统\vs2012\vc\include\string.h(110) : 参见“strcpy”的声明
+  正在生成代码...

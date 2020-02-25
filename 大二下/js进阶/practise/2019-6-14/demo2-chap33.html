@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function* helloGenetator(){
+        yield "hello";
+        yield "world";
+        return "ending";
+    }
+    var iterator = helloGenetator();
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+
+
+    let obj = {};
+    obj[Symbol.iterator] = function* (){
+        yield 1;
+        yield 2;
+        yield 3;
+    }
+    for(let i of obj){
+        console.log(i);
+    }
+
+
+    let str = "abcdefg";
+    for(let j of str){
+        console.log(i);
+    }
+</script>
+</html>

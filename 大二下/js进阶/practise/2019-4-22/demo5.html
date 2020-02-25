@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var point={
+        x:0,
+        y:0,
+        moveTo:function(x,y){
+            function moveToX(x){
+                this.x=x;
+            }
+            function moveToY(y){
+                this.y=y;
+            }
+            //moveToX.__proto__ == Function.prototype
+            console.log(moveToX.bind(this));//输出函数
+            moveToX.bind(this);
+            moveToY.bind(this);
+            //函数.bind(对象)切换函数的调用主体，生成了一个新的函数，并且不会立即执行。
+            //如果想让他立即执行，需要在后边加小括号moveToX.bind(this)();
+        }
+    }
+    point.moveTo(10,10);
+    console.log(point);
+    console.log(Function.prototype);
+</script>
+</html>

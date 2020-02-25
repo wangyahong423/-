@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document——chap15</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function Person(username,age){
+        this.username=username;
+        this.age=age;
+    }
+    Person.prototype.sayHi=function(){
+        //如果不将这个方法写在原型链上，而是写在Person对象里。这样每次实例化Person对象时都会产生一个sayHi方法
+        //这样定义节省空间,person1和person2共用sayHi方法，节省内存空间
+        console.log(this.username);
+    }
+    var person=new Person("zhangsan",20);
+    /*
+        Person.prototype == person.__proto__
+        Person.prototype.constructor == Person
+        Person.prototype.__proto__ == Object.prototype
+        Object.prototype.constructor == Object
+        Object.prototype.__proto__ == null
+    */
+    console.log(person.__proto__ == Person.prototype);//true
+    console.log(Person.prototype.constructor == Person);//true
+    console.log(Person.prototype.__proto__ == Object.prototype);//true
+    console.log(Object.prototype.constructor == Object);//true
+    console.log(Object.prototype.__proto__);//null
+</script>
+</html>

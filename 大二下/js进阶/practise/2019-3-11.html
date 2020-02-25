@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //发反写
+    var a = 45;
+    if(54 == a){
+        console.log("");
+    }
+
+    var a1 = 20;
+    var a2 = "20";
+    if(a1 == a2){
+        //==会发生隐式类型转换
+    }
+    if(a1 == a2){
+        //===先看类型，如果类型不同就不判断值是否相等了
+    }
+
+    var x = "1";
+    console.log(x++);//先输出再运算
+    console.log(++x);//先运算再输出
+    console.log(x += 1);//字符串拼接
+
+    var score = 76;
+    if(score > 90){
+        console.log("优");
+    }
+    else if(score > 75){
+        console.log("良");
+    }
+    else if(score > 60){
+        console.log("及格");
+    }
+    else{
+        console.log("不及格");
+    }
+//可以通过使用&&和||来实现条件语句
+    var nscore = 76;
+    console.log((nscore>90&&"优") || (nscore>75 && "良") || (nscore>60 && "及格") || "不及格");
+
+
+    //switch...case
+    var rscore = 91;
+    console.log((rscore>90&&"优") || (rscore>80 && "良") || (rscore>60 && "及格") || "不及格")
+
+    switch(true){
+        case rscore>90:
+            console.log("优");
+            break;
+        case rscore>80:
+            console.log("良");
+            break;
+        case rscore>60:
+            console.log("及格");
+            break;
+       default:
+            console.log("不及格");
+            break;
+    }
+
+    function sum1(x,y=2,z=3){
+        return x+y+z;
+    }
+    sum1(1);
+
+    
+</script>
+</html>

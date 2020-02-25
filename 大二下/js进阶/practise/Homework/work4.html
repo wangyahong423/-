@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //关系一：
+    function Foo(userName,age){
+        this.userName = userName;
+        this.age = age;
+    }
+    Foo.prototype.sayHello = function(){
+        console.log(this.userName + "say hello");
+    }
+    var f1 = new Foo("zhangsan",20);
+    /*
+        关系一：f1对象的__proto__属性与其构造函数Foo的prototype属性，指向相同，
+        所以通过Foo实例化得到的对象可以去Foo.prototype上查找方法，例如sayHello方法
+    */
+    console.log(f1.__proto__ == Foo.prototype);//true
+
+    /*
+        关系二：构造函数Foo的prototype属性指的是函数的原型对象，也就是这份函数所创建的实例的原型对象，
+        对象的__proto__属性是由一个对象指向一个对象，即指向他们原型对象。而f1是由Foo实例化出来的对象，
+        所以f1.__proto__ == Foo.prototype
+    */
+    console.log(Foo.prototype.__proto__ == Object.prototype);//true
+
+    /*
+        关系三：如果将Object.prototype作为实例对象的话，其原型对象是null,这也是typeof(null)结果为Object的原因
+    */
+    console.log(null == Object.prototype.__proto__);//true
+
+    /*
+        关系四：所有的函数都可以看成是构造函数Foo()的new操作的实例化对象。所以Foo可以看做是
+        调用其自身的new操作的实例化的结果，所以在这里可以将Foo作为实例化对象，其构造函数就是Foo，
+        其原型对象是Foo.prototype
+    */
+    console.log(Foo.prototype == Foo.prototype);//true
+
+    /*
+        关系五：constructor指的是指向该对象的构造函数，每个对象都有构造函数。
+        构造函数Foo的prototype属性指的是函数的原型对象，而经过constructor指向该对象的构造函数，
+        所以Foo.prototype.constructor == Foo
+    */
+    console.log(Foo.prototype.constructor == Foo);//true
+
+    /*
+        关系七：如果将Function.prototype作为实例对象，其原型对象是Function.prototype.__proto__，
+        而所有的对象都可以看成是Object()构造函数的new操作的实例化对象1
+        所以Function.prototype的原型对象是Object.prototype，其原型函数是Object()
+    */
+    console.log(Function.prototype.__proto__ == Object.prototype);//true
+
+    /*
+        关系八：o1对象的__proto__属性与其构造函数Object的prototype属性相同，指向相同，
+        所以通过Object实例化得到的对象可以在Object.prototype上查找方法
+    */
+    var o1 = new Object();
+    console.log(o1.__proto__ == Object.prototype);//true
+
+    /*
+        关系九：所有的函数都可以看成是构造函数Object()的new操作的实例化对象。所以Object可以看做是
+        调用其自身的new操作的实例化的结果，所以在这里可以将Object作为实例化对象，其构造函数就是Object，
+        其原型对象是Object.prototype
+    */
+    console.log(Object.prototype == Object.prototype);//true
+
+    /*
+        关系十：constructor指的是指向该对象的构造函数，每个对象都有构造函数。
+        构造函数Object的prototype属性指的是函数的原型对象，而经过constructor指向该对象的构造函数，
+        所以Object.prototype.constructor == Object
+    */
+    console.log(Object.prototype.constructor == Object);//true
+
+    /*
+        关系十二：所有的函数都可以看成是构造函数Function()的new操作的实例化对象。所以Function可以看做是
+        调用其自身的new操作的实例化的结果，所以在这里可以将Function作为实例化对象，其构造函数就是Function，
+        其原型对象是Function.prototype
+    */
+    console.log(Function.prototype == Function.prototype);//true
+</script>
+</html>

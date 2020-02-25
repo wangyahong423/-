@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //match作用在字符串上边，test作用在正则表达式上
+    var reg1 = /adf/gi;
+    var str = "abcdef adf kil ad adffff";
+    // console.log(str.match(reg1));//["adf","adf"]
+
+    var reg2 = /adf*/gi;
+    // console.log(str.match(reg2));//["adf","ad","adffff"]
+
+    /*
+        .表示任意字符
+    */
+    var reg3 = /a.c/gi;
+    console.log(str.match(reg3));//["abc"]
+
+    /*
+        字符类别：
+            \d：匹配任意阿拉伯数字[0-9]。
+            \D:表示在特定位置上不是一个阿拉伯数字[^0-9]。^表示取反
+            [xyz]从中括号中的字符集和当中任取一个字符
+            [^xyz]排除中括号字符集合中的字符
+            ^ 匹配开始的位置。例如/^a[0-9]/gi,匹配a后边是数字的字符
+            $ 匹配字符的结束位置
+            \w 匹配一个单字字符（字母、数字或者下划线）。
+            \W 匹配一个非单字字符。
+    */
+  
+    var reg4 = /a\dc/gi;
+    var reg4_2 = /a\Dc/gi;
+    var str4 = "a2c a3c abc";
+    console.log(str4.match(reg4));//["a2c","a3c"]
+    console.log(str4.match(reg4_2));
+
+    var reg5 = /[^abc]tf/gi;
+    var str5 = "atf btf ktf";
+    console.log(str5.match(reg5));
+
+    var reg6 = /^a[0-9]/gi;
+    var str6 = "a1b2c3";
+    console.log(str6.match(reg6));
+
+    //$匹配字符的结束位置
+    var reg7 = /[0-9]z$/gi;
+    var str7 = "abcd9z";
+    var str7_1 = "bcfbdfdfd9";
+    console.log(str7.match(reg7));//["9z"]
+    console.log(str7_1.match(reg7));//null
+
+
+     /*
+        数量词：
+            ? 表示之前的字符出现0次或1次。
+            + 表示之前的字符出现1次或多次
+
+   */
+    var str8 = "abc ab kkk";
+    var reg8 = /abc?/gi;
+    console.log(str8.replace(reg8,"X"));//X X kkk
+
+    var reg9 = /abc+/gi;
+    var str9 = "abc abccc abccccc ab";
+    console.log(str9.replace(reg9,"x"));//x x x ab
+
+    var reg10 = /abc{1,3}/gi;
+    var str10 = "abc abcc abccc abcccc";
+    console.log(str10.replace(reg10,"x"));//x x x xc
+</script>
+</html>

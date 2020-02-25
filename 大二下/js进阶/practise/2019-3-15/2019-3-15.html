@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //显示声明函数
+    function fun(x,y){
+        return x + y;
+    }
+    fun(1,2);
+    //匿名函数
+    window.onload = function(){
+        alert("页面加载完毕");
+    }
+    var a = function(x,y){
+        return x + y;
+    }
+    fun(1,2);
+
+    var obj = {
+        x:0,
+        test:function(){
+            console.log(this.x);
+        }
+    }
+    obj.test();
+
+    var objA = {"objectName":"AAA"};
+    var objB = {"objectName":"BBB"};
+    objA.foo = function(){
+        console.log(this.objectName);
+    }
+    objA.foo();//AAA
+    //方法名.call（对象）可以切换方法调用的对象
+    objA.foo.call(objB);//结果为：BBB//通过objA上的foo函数调用call(objB)方法来完成对objB对象中的方法的调用
+
+    //构造函数的调用：
+    function Person(username){
+        this.username = username;
+        // this.sayHi = function(){
+        //    这样写的话函数会出现在原型链上，不好，可以用Person.prototype.sayHi
+        //     console.log(this.username);
+        // }
+    }
+    Person.prototype.sayHi = function(){
+        console.log(this.username);
+    }
+    var person = new Person("zhangsan");
+    console.log(person._proto_ === Person.prototype);
+
+    function test1(){
+        var s="";
+        // arguments获取函数传入的实参，是个类数组对象
+        for(var i = 0;i<arguments.length;i++){
+            s+=arguments[i];
+        }
+        return s;
+    }
+    test1("hello"," world");
+
+
+</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let str="abcdef";
+    for(let i of str){
+        console.log(i);
+    }
+    str.repeat(4);//重复指令一次
+
+
+    let reg1 = /xyz/gi;
+    let reg2 = new RegExp("xyz",'gi');
+    let reg3 = new RegExp(/xyz/gi);
+    let reg4 = new RegExp(/xyz/gi,'i');//不一定支持这种写法，会报错
+
+    /*
+    正则表达式对象，flags获取到正则表达式修饰符
+    */
+    console.log(reg1.flags);
+
+
+    /*
+        sticky y修饰符，他会从上一次匹配成功的结束位置开始匹配
+    */
+    let str0 = "aaa_aa_a";
+    let reg5 = /a+/g;
+    let reg6 = /a+/y;
+    console.log(reg5.exec(str0));
+    console.log(reg5.exec(str0)); 
+
+    console.log(reg6.exec(str0));
+    //上一次匹配结果的索引位置
+    reg6.lastIndex;
+    console.log(reg6.exec(str0));
+    console.log(reg6.sticky);//设置了y修饰符的话结果为true，否则为false
+</script>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        button {
+            width: 200px;
+            height: 60px;
+            margin: 0 auto;
+            display: block;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">开始计数</button>
+</body>
+<!-- <script>
+    //bind 改变this指向
+    let btn = document.getElementById("btn");
+    let count = 0;
+    let intervalId;
+    let times = 0;
+    btn.onclick = function() {
+        times += 1;
+        // console.log(this.innerHTML)
+        if(times%2==1){
+            intervalId = setInterval(function(){
+                this.innerHTML=count++;
+            }.bind(btn),1000)
+        }
+        else{
+            clearInterval(intervalId);
+        }
+    }
+</script> -->
+
+
+<!-- <script>
+    //ES6箭头函数应用
+    let btn = document.getElementById("btn");
+    let count = 0;
+    let intervalId;
+    let times=0;
+    btn.onclick = function() {
+        times += 1;
+        if(times%2==1){
+            intervalId = setInterval(()=>{
+                this.innerHTML=count++;
+            },1000)
+        }
+        else{
+            clearInterval(intervalId);
+        }
+    }
+</script> -->
+
+<script>
+    //软绑定
+    let btn = document.getElementById("btn");
+    let count = 0;
+    let intervalId;
+    let times=0;
+    btn.onclick = function() {
+        times += 1;
+        let that = this;
+        // console.log(this);
+        // console.log(that);
+        if(times%2==1){
+            intervalId = setInterval(function(){
+                that.innerHTML=count++;
+            },1000)
+        }
+        else{
+            clearInterval(intervalId);
+        }
+    }
+</script>
+</html>

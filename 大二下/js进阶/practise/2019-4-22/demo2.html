@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function Point(x,y){
+        this.x=x;//这个是编译器内部帮我们实现的，不用我们过多考虑。
+        this.y=y;
+        this.moveTo=function(x,y){
+            this.x=x;
+            this.y=y;
+        }
+    }
+    var p = new Point(10,10);
+    //this指向函数调用的主体
+    p.moveTo(15,15);
+
+
+    var objA={name:"AA",x:1};
+    var objB={name:"BB",x:5};
+    function test(){
+        console.log(this.name,this.x);
+    }
+    objA.fun=test;
+    objA.fun();
+    /*
+        方法A.call(对象)；
+        切换方法A的调用主体，this指向函数的调用主体。
+        方法.call(要切换的调用对象，arg1,arg2,arg3...)；
+
+        方法B.apply(要切换的调用对象。[arg1,arg2,arg3...]);
+    */
+    objA.fun.call(objB);
+</script>
+</html>

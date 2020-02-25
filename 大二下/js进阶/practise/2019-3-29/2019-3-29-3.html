@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //闭包：函数（addNum）内部定义的函数（return匿名函数）与其相关作用域中的变量（start）形成的实体
+    //start会一直保存在内存中，不会被释放
+    function addNum(start){
+        return function(step){
+            start+=step;
+            return start;
+        }
+    }
+    var fn3 = addNum(10);
+    fn3(1);
+</script>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body></body>
+<script>
+    console.log(a);//undefined
+    if(true){
+        var a=1;
+    }
+    console.log(a);//1
+
+    console.log(foo);
+    //该种情况下，仅会对变量进行
+    //定义的提升！
+    var foo = function(){//当function前边有运算符时，会认为这是表达式，不进行提升
+        console.log("hello world");
+    }
+
+    var b = 1;
+    function fn1(){
+        console.log(b);//1
+        var c = 2;
+        var d = 3;
+        function fn2(){
+            var d = 30;
+            var e = 4;
+            console.log(d);//30
+        }
+        fn2();
+        console.log(d);//3
+        //console.log(e);//报错
+    }
+    fn1();
+
+
+//函数和变量在完成定义之后，作用域就都是确定的，和调用形式没有关系
+    var username = "jack";
+    function f(){
+        username = "bill";
+        console.log(username);
+    }
+    function bar(){
+        var username = "mike";
+        f();
+        console.log(username);
+    }
+    bar();
+
+    //ES5没有块级作用域，只有函数的局部作用域
+    if(true){
+        var aa=2;
+    }
+    console.log(aa);
+
+    var userId = 5;
+    document.onclick = function(){
+        console.log(userId);//30，没有块级作用域，造成的变量的污染
+        userId = 10;
+    }
+//一大段代码
+    if(true){
+        var userId = 30;
+    }
+
+    (function(){
+        if(true){
+            var userId = 30;
+        }
+    })
+
+    //上下文，当某行代码执行过程中，它的上下文环境当前作用域包含了变量、函数调用栈、this的指向
+    var xs = 5;
+    var y = 6;
+    function ab(){
+        var as = 1;
+        var bs = 2;
+        function bc(){
+            var cs = 3;
+            var ds = 4;
+        }
+        bc();
+    }
+    ab();
+
+
+    
+
+</script>
+</html>

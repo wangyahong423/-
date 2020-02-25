@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*使用方法
+    class 类名{
+        constructor(){}
+    }
+    */
+
+    class Point{
+        constructor(){
+            this.x=1;
+            this.y=1;
+        }
+        show(){
+            console.log(this.x);
+        }
+        showY(){
+            console.log(this.y);
+        }
+    }
+    console.log(typeof Point)
+    let p1=new Point();
+    console.log(p1.show());
+
+
+    
+</script>
+</html>

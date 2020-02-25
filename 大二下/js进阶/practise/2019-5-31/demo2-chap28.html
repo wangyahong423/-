@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //字符串解构赋值
+    const[a0,b0,c0,d0,e0]="hello";
+    console.log(a0);//"h"
+    console.log(b0);//"e"
+    console.log(c0);//"l"
+    console.log(d0);//"l"
+    console.log(e0);//"o"
+
+
+    let str = new String("abcd");
+    let[a,b,c,d]=str;
+    console.log(a,b,c,d);// "a" "b" "c" "d"
+
+
+    let{toString:s1}=123;
+    console.log(s1);//toString(){}
+    console.log(s1 === Number.prototype.toString);//true
+
+    //Number
+    /*
+        number对象上会有toString的方法
+    */
+    let num = new Number(5);
+    let{toString:s2} = num;
+    console.log(s2)
+    
+</script>
+</html>

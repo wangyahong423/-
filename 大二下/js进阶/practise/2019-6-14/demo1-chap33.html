@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function createIterator(arr){
+        var i = 0;
+        return {
+            next:function(){
+                return i<arr.length ? 
+                {value:arr[i++],done:true} : 
+                {value:undefined,done:false};
+            }
+        }
+    }
+
+    var iterator = createIterator([1,2,3,4]);
+    console.log(iterator.next());//{value:1,done:true}
+    console.log(iterator.next());//{value:2,done:true}
+    console.log(iterator.next());//{value:3,done:true}
+    console.log(iterator.next());//{value:4,done:true}
+    console.log(iterator.next());//{value:undefined,done:false}
+
+
+    let arr1 = [1,2,3,4,5];
+    for(let i of arr1){
+        console.log(arr1[i]);
+    }
+
+    let m1 = new Map([1,2,3,1,4]);
+    for(let j of m1){
+        console.log(m1[j]);
+    }
+
+    /*
+        arguments
+    */
+
+    /*
+        判断数据结构能否被遍历器遍历：
+    */
+   let arr2 = [1,2,3];
+   console.log(arr2[Symbol.iterator]);
+   //原生的对象结构是不能被遍历的，例如：
+   let person = {"name":"zhangsan","age":20};
+   console.log(person[Symbol.iterator]);//undefined
+</script>
+</html>

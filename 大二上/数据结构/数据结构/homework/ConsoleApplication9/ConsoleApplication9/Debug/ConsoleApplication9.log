@@ -1,0 +1,13 @@
+﻿  main.cpp
+e:\软件学院-qqdownload\大二上\数据结构\homework\consoleapplication9\consoleapplication9\main.cpp(46): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\vs2012\vc\include\stdio.h(290) : 参见“scanf”的声明
+e:\软件学院-qqdownload\大二上\数据结构\homework\consoleapplication9\consoleapplication9\main.cpp(53): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\vs2012\vc\include\stdio.h(290) : 参见“scanf”的声明
+e:\软件学院-qqdownload\大二上\数据结构\homework\consoleapplication9\consoleapplication9\main.cpp(60): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\vs2012\vc\include\stdio.h(290) : 参见“scanf”的声明
+e:\软件学院-qqdownload\大二上\数据结构\homework\consoleapplication9\consoleapplication9\main.cpp(64): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\vs2012\vc\include\stdio.h(290) : 参见“scanf”的声明
+e:\软件学院-qqdownload\大二上\数据结构\homework\consoleapplication9\consoleapplication9\main.cpp(65): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\vs2012\vc\include\stdio.h(290) : 参见“scanf”的声明
+e:\软件学院-qqdownload\大二上\数据结构\homework\consoleapplication9\consoleapplication9\main.cpp(36): warning C4715: “judge”: 不是所有的控件路径都返回值
+  ConsoleApplication9.vcxproj -> E:\软件学院-QQDownload\大二上\数据结构\homework\ConsoleApplication9\Debug\ConsoleApplication9.exe

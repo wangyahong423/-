@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+//ch08
+
+    //对象instanceof构造函数
+    //1、判断这个对象能否使用后面的构造函数实例化得到。（instanceof运算符用于测试构造函数的prototype属性是否出现在对象的原型链中的任何位置）
+    //2、判断能否在对象的原型链上找到构造函数的prototype。
+    function Person(username,age){
+        this.username = username;
+        this.age = age;
+    }
+    var person = new Person("zhangsan",20);
+    console.log(person instanceof Person);//返回值为true，因为person对象可以用后面的Person构造函数实例化
+
+    console.log(person);//原型链就是对象的_proto_属性上的内容
+     console.log(person.__proto__==Person.prototype);//false
+    //判断能否在person的原型链上找到Object构造函数的prototype
+    console.log(person.__proto__==Object.prototype);//false
+    console.log(person.__proto__.__proto__);
+    console.log(Object.__proto__);
+
+    
+
+    //函数对象的属性及方法
+    function fn1(x){
+        //arguments获取函数调用时传入的实参，是类数组结构
+        for(var i=0;i<arguments.length;i++){
+            console.log(arguments[i]);
+        }
+        console.log(fn1.length);//输出1，函数名.length表示形参的个数
+        //fn1.length。 输出1，函数名.length表示形参的个数
+    }
+    fn1(10,5,3);
+
+
+    function fn2(){
+        console.log(fn2.caller);//caller定义在函数上边
+    }
+    function fn3(){
+        fn2();
+    }
+    fn3();
+
+
+    //函数对象的方法ch08
+    var objA = {"objName":"AAA"};
+    var objB = {"objName":"BBB"};
+    objA.foo = function(){
+        console.log(this.objName);
+    }
+    objA.foo();//"AAA"
+    //方法.call(对象)
+    objA.foo.call(objB);//"BBB"
+
+    //原本的this指向，使用P构造函数实例化得到的对象
+    function P(username){
+        //构造函数的结构
+        this.username = username;
+        this.sayHi = function(){
+            console.log(this.username);
+        }
+    }
+    //而在Student内部调用的时候（P.call(this,username)），其具有一个指定的this值和分别提供的参数（参数的列表）
+    //方法.call()方法会被调用一次
+    function Student(username,age){
+        P.call(this,username,age);//this指的是P中的username,使用call之后改变了this的指向，现在this指向Student中的username，这里这个语句相当于this.username=username;
+        //P.apply(this,[username,age]);//与call不同的是，apply传入的是数组
+        this.age = age;
+    }
+    var p = new P("lisi");
+    var student  = new Student("wangwu",20);
+    console.log(p);
+    console.log(student);
+
+
+    //bind()创建一个新的函数，在调用时设置this关键字
+    var fun1 = {
+        "name":"aaa",
+        "foo":function(){
+            console.log(this.name);
+        }
+    }
+    var fun2 = {"name":"BBB"};
+    var foo2= fun1.foo.bind(fun2);
+    foo2();
+
+
+    //高阶函数
+    var obj1 = {x:3};
+    function f1(){
+        function f2(){
+            console.log(this.x);
+        }
+        return f2;
+    }
+    obj1.f3 = f1;
+    obj1.f4 = f1();
+    obj1.f3();
+    obj1.f4();
+
+
+
+    var obj2 = {
+        x:1,
+        f7:function(){
+            function f8(){
+                console.log(that.x);
+            }
+            console.log(this.x);
+        }
+    }
+    obj2.f7();
+</script>
+</html>

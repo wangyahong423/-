@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //1、非严格模式下this指向window对象。
+    //2、严格模式下，this是undefined。
+    //3、this是谁，取决于函数调用的主体。
+    var x=10;
+    console.log(x);
+    console.log(window.x);
+    function thisTest(){
+        console.log(this);
+        console.log(window);
+        console.log(this === window);
+    }
+    thisTest();
+
+    //严格模式
+    function thisTest1(){
+        'use strict';
+        console.log(this);
+        return this === undefined ? true : false;
+    }
+    thisTest1();
+
+
+    /*
+        1、直接定义在对象下的方法，调用主体就是当前对象。this指向也是当前对象。
+        2、前提是没有函数嵌套。
+    */
+    var point={
+        x:0,
+        y:0,
+        moveTo:function(x,y){
+            this.x=x;
+            this.y=y;
+        }
+    }
+    point.moveTo(10,10);//调用方式
+</script>
+</html>

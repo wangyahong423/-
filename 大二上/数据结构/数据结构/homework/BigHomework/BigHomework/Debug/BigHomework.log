@@ -1,0 +1,15 @@
+﻿  main.cpp
+e:\软件学院-qqdownload\大二上\数据结构\homework\bighomework\bighomework\main.cpp(112): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\vs2012\vc\include\string.h(110) : 参见“strcpy”的声明
+e:\软件学院-qqdownload\大二上\数据结构\homework\bighomework\bighomework\main.cpp(120): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\vs2012\vc\include\stdio.h(218) : 参见“fopen”的声明
+e:\软件学院-qqdownload\大二上\数据结构\homework\bighomework\bighomework\main.cpp(183): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\vs2012\vc\include\stdio.h(237) : 参见“fscanf”的声明
+e:\软件学院-qqdownload\大二上\数据结构\homework\bighomework\bighomework\main.cpp(181): warning C4101: “j”: 未引用的局部变量
+e:\软件学院-qqdownload\大二上\数据结构\homework\bighomework\bighomework\main.cpp(207): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\vs2012\vc\include\stdio.h(237) : 参见“fscanf”的声明
+e:\软件学院-qqdownload\大二上\数据结构\homework\bighomework\bighomework\main.cpp(210): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\vs2012\vc\include\string.h(110) : 参见“strcpy”的声明
+e:\软件学院-qqdownload\大二上\数据结构\homework\bighomework\bighomework\main.cpp(229): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\vs2012\vc\include\string.h(110) : 参见“strcpy”的声明
+  BigHomework.vcxproj -> E:\软件学院-QQDownload\大二上\数据结构\homework\BigHomework\Debug\BigHomework.exe

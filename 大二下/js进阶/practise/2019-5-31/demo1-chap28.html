@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let[one,two,third] = [1,2,3];//对应位置赋值
+    console.log(third);
+
+    let[x,,y]=[1,2,3];
+    console.log(x,y);//1  3
+
+    /*
+        ...理解为剩余运算符，其他元素匹配完成后，匹配剩余的元素
+    */
+    let[head,...tail]=[1,2,3,4];//...可以理解为表示剩余，剩余运算符。
+    console.log(head,tail);//1  [2,3,4]
+
+    //左侧元素比右侧元素多的时候，没匹配到的是undefined
+    /*
+        当左侧结构元素个数大于右侧时，未匹配的变量会是undefined
+        ...匹配结果是[]
+    */
+    let[d,e,...f]=['a'];
+    console.log(d,e,f);//"a"   undefined  []
+
+
+    let{bar,foo} = {foo:"foo",bar:"bar"};
+    console.log(bar,foo);
+
+    let{bar0,foo0,other} = {foo0:"foo",bar0:"bar"};
+    console.log(bar0,foo0,other);
+
+    /*
+        对象解构赋值，根据键名来进行匹配，然后完成赋值。
+    */
+    var{foo4:bar4} = {foo4:"aaa",bar4:"bbb"};
+    console.log(bar4);//"aaa"
+</script>
+</html>

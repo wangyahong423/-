@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+        /双斜杠中间是正则表达式的文本部分/斜杠后边是正则表达式的标识符
+        [xyz]指的匹配中括号中任意的字符
+        标识符：
+            g：表示全局的检索。如果不使用g，就返回第一个完整匹配的字符串
+            i：表示是否忽略大小写，写了i表示忽略大小写
+    */
+   //reg2和reg3和reg1是不同的三种定义正则表达式的形式，都可以用。
+    var reg1 = /[bcf]at/gi;
+    var reg2 = new RegExp(/[bcf]at/,"gi");
+    var reg3 = new RegExp("[bcf]at","gi");
+    console.log("a fAt bat ,a faT cat".match(reg1));
+    console.log("a fAt bat ,a faT cat".match(reg2));
+    console.log("a fAt bat ,a faT cat".match(reg3));
+
+    var str1 = "fat Fat bat cat jdkfdj llo";
+    console.log(str1.match(reg1));
+</script>
+</html>

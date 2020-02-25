@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //例一
+    /*
+        forEach(callback.thisArg)
+        callback(element,index,arr)
+            element遍历数组每次取到的数组元素值
+            index遍历数组每次取到的数组元素的索引值
+            arr是每次操作的数组
+        thisArg可以指明回调函数内部this的指向
+    */
+    var arr1=['a','b','c','d'];
+    arr1.forEach(function(element,index,arr2){
+        console.log(element,index,arr2);
+        window.x=10;
+    },window)
+//例二
+    var arr3 = [10,20,20,40];
+    var check = function(value){
+        return value<50;
+    }
+    var result = arr3.every(check);
+    console.log(result);
+    //Every测试数组的所有元素是否通过指定函数的测试。
+
+
+    var arr4 = [1,2,3];
+    var arr5 = arr4.map(function(element){
+        return element*2;
+
+    })
+    console.log(arr5);
+    //map() 方法创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。
+
+</script>
+</html>

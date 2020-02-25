@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+        将类数组结构转换为数组
+    */
+    //类数组结构
+    console.log(Array.from("abcdef"));
+    function fn1(){
+        console.log(arguments);
+    }
+    fn1(1,2,3);
+
+    console.log(Array.of(1,2,3));//将零散元素转换为数组
+
+
+    /*
+        复制数组里面的元素到数组的特定位置上
+        arr.copyWithIn(target,start,end);不包括end
+        target:复制的目标位置
+        start：复制元素的起始位置
+        end：复制元素的结束位置
+    */
+    var arr1=[1,2,3,4,5,6];
+    console.log(arr1.copyWithin(0,4,5));//5 2 3 4 5 6
+
+    /*
+        Array.prototype.find()
+        将当前数组遍历一遍，满足其回调函数的验证条件就输出满足条件的第一个数组元素，否则不输出
+
+        Array.prototype.findIndex()
+        将当前数组遍历一遍，满足其回调函数的验证条件就输出满足条件的第一个数组元素的位置，否则不输出
+    */
+    let arr2 = [10,15,20,30,40];
+    console.log(arr2.find(function(element){
+        return element>19;
+    }))
+
+    let elIndex = arr2.findIndex(function(element){
+        return element>29;
+    })
+    console.log(elIndex);
+
+    /*
+        fill(value,start,end);
+        向数组特定的起始位置和结束位置之间填充value
+
+        keys() 获取键的值
+        values() 获取数组的具体值
+        
+    */
+
+    //ES6中对象的定义方式变了
+    /*
+        ES6里面对象的结构进行了简化，
+        属性可以写成变量的形式
+        函数省略了function 函数名(){}
+    */
+    let username = "lily";
+    let obj = {
+        username,
+        fn2(){
+            console.log(this.username);
+        }
+    }
+
+    let bar = "foo";
+    let obj1={
+        [bar]:"male"
+    }
+    console.log(obj1);
+
+    let obj2 = {username:"zhangsan"};
+    let obj3 = {age:20};
+    console.log(Object.assign(obj2,obj3));//合并两个对象
+    console.log(obj2.keys);
+    console.log(obj2.values());
+    console.log(obj2.entries());
+    
+</script>
+</html>

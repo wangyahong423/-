@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			background: #ddd;
+			margin-top: 10px;
+		}
+		#container{
+			width: 800px;
+			height: 400px;
+			margin: 0 auto;
+			border: 1px solid red;
+		}
+		img{
+			width: 350px;
+		}
+		#btnlist{
+			width: 1000px;
+			margin: 0 auto;
+		}
+		.imgborder{
+			border: 5px solid red;
+		}
+		#der{
+			width: 300px;
+			height: 500px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<table id="tb1" width="400" height="400" border="1" align="center" class="re">
+		<tr class="even">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr class="odd">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr class="even">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr class="odd">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	<table width="400" height="400" border="1" align="center" id="de">
+		<tr class="even">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr class="odd">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr class="even">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr class="odd">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	<input type="text">
+	<input type="file">
+	<input type="button">
+	<input type="submit">
+	<input type="checkbox">
+
+	<input type="button" value="绑定点击事件" id="btn1">
+	<input type="button" value="绑定点击事件" id="btn2">
+	<input type="button" value="绑定点击事件" id="btn3">
+
+	<img src="img/1.jpg" alt=""/>
+
+	<div>层1</div>
+	<div>层2</div>
+	<div>层3</div>
+
+	<table>
+		<tr>
+			<td>用户名</td>
+			<td>
+				<input type="text" name="username" id="username">
+				<span class="error"> </span>
+			</td>
+		</tr>
+		<tr>
+			<td>密码</td>
+			<td>
+				<input type="password" name="pwd">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="button" value="登录">
+			</td>
+		</tr>
+	</table>
+
+	<div id="container">
+		<img src="img/2.jpg" alt="" id="img1">
+	</div>
+	<div id="btnlist">
+		<button id="after">after</button>
+		<button id="insertAfter">insertafter</button>
+		<button id="before">before</button>
+		<button id="after">after</button>
+
+	</div>
+
+	<img src="img/1.jpg" id="img11" alt="" class="bg imgborder">
+	<button id="btn">点击按钮时改变图片的src属性值</button>
+	<button id="btnd1">只改变元素class的方法</button>
+
+
+	<div id="der">
+		
+	</div>
+	<button id="slidedown">slidedown</button>
+	<button id="slideup">slideup</button>
+	<button id="fadeout">fadeout</button>
+	<button id="fadein">fadein</button>
+	<button id="animate">animate</button>
+
+
+</body >
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+	// jQuery在线地址/jQuery库
+	// jquery.min.js 压缩版的，一般用于生产环境
+	// jquery.js 未压缩的，内部代码有格式，可对源码进行修改 一般用于开发环境
+
+	// 标签选择器/ID选择器/类选择器/层级选择器（后代选择器/子选择器）
+
+	// $(jquery选择器) 
+
+	// 给当前页面加背景颜色
+	// $("body").css("background","red");
+
+	// 给偶数行加背景颜色
+	//.even 不能忘记，
+	// $(".even").css("background","red");
+
+	// $("")jquery包装集 可与js对象转换
+
+	// 层级选择器
+	// $("#tb1 .even").css("background","red");//后代节点
+	// //层级选择器
+	// $("#tb1>.even").css("background","blue");//子节点
+
+	// //过滤选择器
+
+	// $("td:first").css("background","red");//第一个元素
+	// $("td:last").css("background","green");//最后一个元素
+
+	// $("td:even").css("background","blue");//所有的偶数
+	// $("td:odd").css("background","purple");//所有的奇数
+
+	// //选取任意索引的元素
+	// //eq(index)
+
+	// $("td:eq(4)").css("background","black");//选中特定索引值的元素
+	// $("td:gt(1)").css("background","orange");//选中索引值大于index的元素
+	// $("td:lt(8)").css("background","yellow");//选中索引值小于index的元素
+
+	//排除集合中特定的某个或某些元素
+	//not(selector)
+	// $("table:not(#tb1)").css("background","pink");
+	// $(":not(#tb1)").css("background","pink");
+
+
+	//基本选择器
+
+	
+
+	//表单选择器
+	// $(":text").css("background","red");
+
+	// jquery事件
+	// 事件是指可以被javascript侦测到的行为
+	// javaScript原生的事件和jQuery中的事件是一致的，唯一不同的是调用和处理事件的方式不同
+
+	//jquery事件名称去掉on前缀
+	// ready文档就绪事件 click鼠标单击 mouseover鼠标移上 mouseout鼠标移开事件 mousemove鼠标移动事件 blur失去焦点 focus获得焦点
+	// javaScript事件
+	// Element.EventName = function(){
+
+	// }
+
+	//Jquery事件
+	// $("selector").EventName(function(){
+
+	// })
+	// jQuery包装集.事件方法(回调函数)
+
+	// $("#btn1").click(function(){
+	// 	alert("按钮被点击了");
+	// })
+
+	// $(":button").click(function(){
+	// 	alert("所有按钮都被点击了");
+	// })
+
+	// //移上的时候给当前图片加上一个红色边框
+	// $("img").mouseover(function(){
+	// 	// this.style.border = "1px solid red";  一般不混用
+	// 	$(this).css("border","1px solid red");
+	// }).mouseout(function(){
+	// 	$(this).css("border","none");
+	// })
+
+	// $("div").mouseover(function(){
+	// 	$(this).css("background","blue");
+	// }).mouseout(function(){
+	// 	$(this).css("background","#ddd");
+	// }).click(function(){
+	// 	$(this).css("background","red");
+	// })
+
+	// jQuery DOM 操作
+	// 查找节点
+	// 插入节点
+	// 删除节点
+	// 设置和获取HTML、文本和值
+
+    // 结合DOM操作实现如下效果：
+    // 用户名不能为空，否则提示错误，
+    // 密码不能为空，否则提示错误，
+    // 使用jQuery 文档操作的相关方法实现该过程。
+
+    //获取或设置value值 $(选择器).val()
+    //得到包装集 $("html标记")
+    //向特定节点添加元素即 向选中元素内部添加一个新的元素 $(选择器).append();
+    // $(选择器).remove();将特定元素从页面结构中移除
+
+    // $("#username").blur(function(){
+    // 	var inputVal = $(this).val();//获取文本框输入的内容
+    // 	var errorTip = $("<span class='error'>用户名不能为空</span>");//创建节点
+    // 	if(inputVal == ""){
+    // 		$(this).parent().append(errorTip);//存在问题 为空的话会一直加节点、写入内容后节点未消失
+    // 	}else{
+    // 		$(".error").remove();//将选中的元素移除掉
+    // 	}
+    // })
+    //向特定元素的后面插入新的节点 after() insertAfter()
+    //向特定元素的前面插入新的节点 before() insertBefore()
+    //向特定元素标签内部最后的位置添加新节点 append() appendTo()
+    //向特定元素标签内部最前的位置添加新节点 prepend() prependTo()
+    // $("#after").click(function(){
+    // 	var $img2 = $("<img src = '2.jpg./>");
+    // 	$("img1").after($img2);
+    // })
+    // $("#insertAfter").click(function(){
+    // 	var $img2 = $("<img src = '2.jpg./>");
+    // 	$img2.insertafter($("#img1"));
+    // })
+    // $("#before").click(function(){
+    // 	var $img2 = $("<img src = '2.jpg./>");
+    // 	$("img1").before($img2);
+    // })
+
+
+    // after在匹配元素之后插入内容
+    // insertAfter 把匹配的元素插入到另一个指定元素集合的后面
+    // before 在每个匹配的元素之前插入内容
+    // insertBefore  把匹配的元素插入到另一个指定的元素集合的前面
+    // append 向匹配元素集合中的每个元素结尾插入由参数指定的内容
+    // appendTo 向目标结尾插入匹配元素集合中的每个元素
+    // prepend 向匹配元素集合中的每个元素开头插入由参数指定的内容
+    // prependTo 向目标开头插入匹配元素集合中的每个元素
+
+    //点击按钮后 将新生成的图片加入到指定元素的后面
+
+
+
+
+    //val()用于设置或获取表单元素的value值
+    //html()用于设置或获取双标记标签元素的标签内部的html内容
+    //css()用于设置选中元素的样式 css("样式名","样式值") 或 css({"样式名"："样式值"，"样式名"："样式值"})
+    //获取文本框中的文本内容
+    // $("#username").blur(function(){
+    // 	var inputVal = $(this).val();
+    // 	if(inputVal ==""){
+    // 		// $(".error").html();//获取
+    // 		$(".error").html("用户名不能为空");//设置
+    // 		// $(".error").css("color","red");
+    // 		// $(".error").css("font-size","40px");
+    // 		//以对象形式设置多个样式
+    // 		$(".error").css({
+    // 			"color":"purple",
+    // 			"font-size":"30px"
+    // 		});
+
+    // 	}
+    // })
+
+    //改变一些元素属性的属性值
+    // $("#btn").click(function(){
+    // 	$("#img11").attr("src","img/2.jpg");//获取(一个参数)或设置(两个参数)特定属性的属性值
+    // 	$("#img11").attr("title","这是一张图片");
+    // 	alert($("#img11").attr("title"));
+
+    // 	// $("#img11").attr("class","");
+    // 	$("#img11").removeAttr("title");//移除特定属性
+    // 	//移除class中某一个值
+    // 	//加上一个class或移除一个class
+    // })
+
+    // $("#btnd1").click(function(){
+    // 	 $("#img11").addClass("imgborder");
+    // 	$("#img11").removeClass("imgborder");
+    // })
+
+    // //鼠标移上有class
+    // $("#btnd1").mouseover(function(){
+    // 	$("#img11").addClass("imgborder");
+    // })
+    // //鼠标移出没有class
+    // $("#btnd1").mouseout(function(){
+    // 	$("#img11").removeClass("imgborder");
+    // })
+
+    //改变元素的高度来切换显示和隐藏
+    $("#slideup").click(function(){
+    	$("div").slideUp(4000);
+    })
+
+    $("#slidedown").click(function(){
+    	$("div").slideDown(4000);
+    })
+    //改变元素的透明度来切换显示和隐藏
+    $("#fadein").click(function(){
+    	$("div").fadeIn();
+    })
+
+    $("#fadeout").click(function(){
+    	$("div").fadeOut();
+    })
+
+    $("#animate").click(function(){
+    	$("div").animate({
+    		"margin-left":"50px"
+    	},3000);
+    })
+
+
+
+
+
+
+
+</script>
+</html>

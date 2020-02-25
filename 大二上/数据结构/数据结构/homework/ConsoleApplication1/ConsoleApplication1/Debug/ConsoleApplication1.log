@@ -1,0 +1,9 @@
+﻿  Lab.cpp
+e:\软件学院-qqdownload\大二上\数据结构\homework\consoleapplication1\consoleapplication1\lab.cpp(30): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\vs2012\vc\include\stdio.h(290) : 参见“scanf”的声明
+  DynaLnkList.cpp
+  正在生成代码...
+  正在跳过...(未检测到相关更改)
+  ElemType.cpp
+Lab.obj : error LNK2019: 无法解析的外部符号 "void __cdecl Sort(struct Node * *)" (?Sort@@YAXPAPAUNode@@@Z)，该符号在函数 _main 中被引用
+E:\软件学院-QQDownload\大二上\数据结构\homework\ConsoleApplication1\Debug\ConsoleApplication1.exe : fatal error LNK1120: 1 个无法解析的外部命令

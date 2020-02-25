@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var o1={};
+    Object.defineProperty(o1,'x',{
+        value: 1,
+        writable:true
+    });
+    var o2 = Object.create(o1);
+    console.log(o2.__proto__ == o1);//true，将o2定义到了o1的__proto__上
+    o2.x=2;
+    console.log(o2.x);//2
+    delete(o2.x);//删除属性值只能删除自身所具有的的属性
+    console.log(o2.x);//1
+
+    o2.__proto__.x = 3;//o2.__proto__ == o1
+    //原型是对象的引用，将对象的属性改了，所有引用该属性的对象都变了
+    //o2.__proto__与o1是完全相同的对象的引用，改其中一个，另一个也发生变化
+    console.log(o2.x);//3
+    console.log(o1.x);//3
+</script>
+</html>

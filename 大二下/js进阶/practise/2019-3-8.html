@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //ES是ECMAScript的简写，ECMAScript是一个语言标准。
+    //ES5（web二学的）  ES6是ECMAScript现在最主流的两个版本
+    //JavaScript在ES5的标准下没有块级的作用域
+
+    //如果变量中不使用var声明，变量会自动提升为全局变量。（这个变量很容易被后边定义的局部变量覆盖，而不容易被程序员发现）。解决方法：使用严格模式。
+    //严格模式下，变量必须进行显式声明
+    //JavaScript最大的缺陷:JavaScript中的全局变量
+    function fn1(){
+        username = "zhangsan";
+    }
+    fn1();
+    console.log(username);//"zhangsan"
+    /*
+    function fn1(){
+        'use strict'
+        username = "zhangsan";
+    }
+    fn1();
+    console.log(username);//报错
+    */
+
+    function fn2(){
+        //普通函数的内部this指向window对象；严格模式下this指向undefined
+        'use strict'
+        console.log(this);
+    }
+    fn2();
+
+    function fn3(){ 
+        var result = (this === undefined ? true : false);//此时的this指向window，结果为false；加上 'use strict'之后结果为true
+        return result;
+    }
+    console.log(fn3());//false
+
+    var str = "abcdef";
+    str.length = 5;
+    console.log(str.length);//6，没有改变length的值
+
+
+    if(false){
+        var a=1;
+    }
+    console.log(a);//undefined
+    if(true){
+        var a=1;
+    }
+    console.log(a);//1
+    if(true){
+        var a=1;
+    }
+    var a = 4;//写成a = 4也是一样的结果
+    console.log(a);//4
+    
+    for(var i=0;i<3;i++){
+
+    }
+    console.log(i);//3
+
+    //如果想在当前页面的JavaScript使用严格模式,就在当前页面首行加入:'use strict'
+    //如果想在函数中使用严格模式，就在函数首行加入'use strict'
+    // function foo(){
+    //     'use strict'
+    // }
+
+    //switch的使用
+    //switch...case 是进行的值和类型的判断，不会发生隐式的类型转换
+    //语句的穿透性(有无break的区别以及ind的取值)
+    //switch...case适用于条件多的时候，效率高
+    //if...else适用于条件少的情况
+    var ind = 1;
+    switch(ind){
+        case 1:
+            console.log("星期一");
+           // break;
+        case 2:
+            console.log("星期二");
+            //break;
+        default:
+            console.log("均不符合");
+           // break;
+    }
+
+    //for...in遍历可枚举的属性。可以遍历数组，但是不推荐使用，在数组中遇到空元素时，会忽略空缺
+    var obj1 = {"username":"zhangsan","age":20};
+    for(var i in obj1){
+        console.log(i,obj1[i]);
+    }
+
+</script>
+</html>

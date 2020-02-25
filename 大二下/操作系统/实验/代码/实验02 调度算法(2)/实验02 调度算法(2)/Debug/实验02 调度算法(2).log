@@ -1,0 +1,17 @@
+﻿  ProPCB.c
+  main.c
+e:\软件学院-qqdownload\大二下\操作系统\实验\代码\实验02 调度算法(2)\实验02 调度算法(2)\main.c(19): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\软件学院-qqdownload\大二下\操作系统\vs2012\vc\include\string.h(110) : 参见“strcpy”的声明
+e:\软件学院-qqdownload\大二下\操作系统\实验\代码\实验02 调度算法(2)\实验02 调度算法(2)\main.c(28): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\软件学院-qqdownload\大二下\操作系统\vs2012\vc\include\string.h(110) : 参见“strcpy”的声明
+e:\软件学院-qqdownload\大二下\操作系统\实验\代码\实验02 调度算法(2)\实验02 调度算法(2)\main.c(37): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\软件学院-qqdownload\大二下\操作系统\vs2012\vc\include\string.h(110) : 参见“strcpy”的声明
+e:\软件学院-qqdownload\大二下\操作系统\实验\代码\实验02 调度算法(2)\实验02 调度算法(2)\main.c(46): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\软件学院-qqdownload\大二下\操作系统\vs2012\vc\include\string.h(110) : 参见“strcpy”的声明
+e:\软件学院-qqdownload\大二下\操作系统\实验\代码\实验02 调度算法(2)\实验02 调度算法(2)\main.c(55): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\软件学院-qqdownload\大二下\操作系统\vs2012\vc\include\string.h(110) : 参见“strcpy”的声明
+  ChainList.c
+e:\软件学院-qqdownload\大二下\操作系统\实验\代码\实验02 调度算法(2)\实验02 调度算法(2)\chainlist.c(14): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\软件学院-qqdownload\大二下\操作系统\vs2012\vc\include\string.h(110) : 参见“strcpy”的声明
+  正在生成代码...
+  实验02 调度算法(2).vcxproj -> E:\软件学院-QQDownload\大二下\操作系统\实验\代码\实验02 调度算法(2)\Debug\实验02 调度算法(2).exe

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            background: #ddd;
+            margin-top: 10px;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div>层一</div>
+    <div>层二</div>
+    <div>层三</div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    $("div").mouseover(function(){
+        $("div").css("width","300px");//或者写成$(this).css("width","300px");
+        $("div").css("height","300px");
+    }).mouseout(function(){//这样合成写，和分开写的效果一样$("div").mouseover().mouseout()等价于$("div").mouseover();$("div").mouseout()
+        $("div").css("width","100px");
+        $("div").css("height","100px");
+    })
+</script>
+</html>

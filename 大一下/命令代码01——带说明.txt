@@ -1,0 +1,44 @@
+用户模式到特权模式
+Router>enable 
+特权模式到全局配置模式
+Router#configure terminal 
+全局配置模式到接口配置模式
+Router(config)#interface fastEthernet 0/0
+接口加IP地址
+Router(config-if)#ip address 192.168.0.1 255.255.255.128
+接口激活
+Router(config-if)#no shutdown 
+
+退出接口配置模式
+Router(config-if)#exit
+退出全局配置模式
+Router(config)#exit
+
+保存运行时配置信息
+Router#copy running-config startup-config
+ 
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Router#
+
+修改路由器名字
+Router(config)#hostname zhangsan
+zhangsan(config)#
+
+路由器与路由器用串口连接并配置
+Router#conf t（有些命令可以简写，以下一些命令同理）
+Router(config)#interface serial 2/0
+Router(config-if)#ip address 192.168.1.1 255.255.255.0
+Router(config-if)#clock rate 64000（只有带时钟的一端需要设置）
+Router(config-if)#no shutdown 
+
+Router>en（简化写法）
+Router#conf t
+Router(config)#int s 2/0
+Router(config-if)#ip add 192.168.1.2 255.255.255.0
+Router(config-if)#no sh
+
+在路由器上使用ping验证连通性
+Router#
+Router#ping 192.168.1.1

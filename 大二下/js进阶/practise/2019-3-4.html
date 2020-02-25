@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //基本数据类型，在操作过程中会有自动装箱过程，生成临时对象。临时对象在使用完成之后会自动释放。
+    var num=10;
+    num.toString();
+
+    var num=10;
+    var numObject = new Number(num);
+    numObject.toString();
+
+    num.p=10;
+    var t = num.p;
+    console.log(t);
+
+    var num1 = 11.26;
+    var numobj2 = new Number(num1);
+    console.log(numobj2);
+    console.log(num1.toFixed(1));
+
+    var str = "ab*cd*ef*gh";
+    var strObj = new String(str);
+    //charAt(index)；返回特定索引位置index的字符
+    str.charAt(1);//"b"
+
+    //charCodeAt(index);返回特定索引位置的字符的unicode码
+    str.charCodeAt(0);//97
+
+    //从特定位置截取字符串(第一个参数代表起始位置，第二个参数代表结束位置)
+    str.slice(0,3);//"abc"
+    str.slice(0,-3);//"abcde"
+
+    //str.substr(0,3)第一个参数截取字符起始位置，第二个参数为截取字符串的长度
+    str.substr(0,3);//"abc"
+
+    //str.substring(0,3)//第一个参数为起始位置，第二个参数为字符串的末尾位置
+    str.substring(0,3);//"abc"
+    str.substring(3,0);//"abc"    此时第一个参数比第二个参数大的时候，在运行时，函数本身会自动将第一个参数和第二个参数调换位置，再运算
+                                //如果超出索引位置 0 - str.length-1   自动截断
+
+    str.split("*");//["ab","cd","ef","gh"];    字符串分割，将字符按照特定符号进行分割成数组
+    str.split("*",2);//["ab","cd"];         字符串分割，将字符按照特定符号进行分割成数组，并对该数组进行长度的截取
+
+    var str2 = "   abc   d     e";
+    var str3 = "   abc   d     ";
+    str2.trim();//"abc   d     e"  //只能去掉字符串两端的空格，不会去除字符串内部的空格
+    str3.trim();//"abc   d"
+
+    var str4 = "hello";
+    var str5 = " world";
+    console.log(str4.concat(str5));
+
+
+
+
+
+
+    //number  string  boolean
+    //Number()  String()  Boolean()(与上相对应的包装函数)
+
+    //基本数据类型的变量__proto__属性与Number.prototype属性完全相等
+    //__proto__ == Number.prototype
+    var num2  = 10;
+    console.log(num2.__proto__);
+    console.log(Number.prototype);
+    // num2.__proto__与Number.prototype的输出结果完全相同
+</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document——chap15</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var obj1={z:1};
+    var obj2=Object.create(obj1);
+    console.log(obj1.__proto__ == Object.prototype);//true
+    console.log(obj2.__proto__);//obj1
+    console.log(obj2.__proto__.__proto__);//Object.prototype
+    console.log(obj2.__proto__.__proto__.__proto__);
+
+    var ob1={z:1,sayHi:function(){console.log(this.z)}};
+    var ob2=Object.create(ob1);
+    ob2.z;
+    ob2.sayHi();
+</script>
+</html>

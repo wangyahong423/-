@@ -1,0 +1,2 @@
+DVD [DVD名称：1, DVD编号：001, 数量：2.0, ISRC号：sdf]
+DVD [DVD名称：sdf, DVD编号：002, 数量：2.0, ISRC号：sadsfgh]

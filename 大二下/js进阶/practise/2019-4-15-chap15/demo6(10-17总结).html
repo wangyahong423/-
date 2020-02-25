@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+        1、防止变量污染
+        2、防止变量的非期望共享
+    */
+    (function(){
+        //1、防止变量污染：用立即执行函数，形成独立作用域
+    })()
+    for(var i=0;i<3;i++){
+        // 2、防止变量的非期望共享
+        //适用场景：
+        //2.1 给元素绑定事件
+        //2.2 回调函数
+        //2.3 延迟执行/定时执行
+            (function(j){
+
+            })(i)
+    };
+
+    //闭包：JavaScript存在的代码的运行机制
+    //基本闭包结构：外层函数fn1、内层函数fn2
+    function fn1(){
+        var x=0;
+        function fn2(){
+            return ++x;
+        }
+        return fn2;
+    }
+    var result = fn1();//得到一个fn2的函数
+    result();//对x进行++
+    result();
+</script>
+</html>

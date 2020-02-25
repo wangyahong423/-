@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    JS对象
+</body>
+<script>
+    /*Instanceof：前面的对象是否可以由后边的函数实例化得到
+    能否在前面这个对象的原型链上找到后边构造函数的原型
+    对象._proto_. _proto_（长度不确定）==构造函数.prototype
+    */
+    //var o = new Object();
+    console.log(Object instanceof Function);//true
+    console.log(Object.__proto__ == Function.prototype);//true
+    console.log(Object instanceof Object);//true
+    console.log(Object.__proto__.__proto__ == Object.prototype);//true
+
+    function Person(username,age){
+        this.username = username;
+        this.age = age;
+    }
+    var p = new Person("lvfeng",20);
+    console.log(p instanceof Person);//true
+    console.log(p.__proto__ ==  Person.prototype);//true
+
+
+    var o = {
+        _x:1,
+        get x(){
+            return this._x;
+        },
+        set x(val){
+            this._x = val;
+        }
+    }
+    o.x = 10;
+    console.log(o.x,o._x);
+</script>
+</html>

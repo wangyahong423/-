@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var obj = {x:0};
+    Object.defineProperty(obj,"y",{
+        value:1,
+        enumerable:true,
+        writable:true,
+        configurable:true
+    });
+    //获取特定对象，特定属性的属性描述符
+    Object.getOwnPropertyDescriptor(obj,"y");
+
+    var obj1 = {_x:1};
+    Object.defineProperties(obj1,{
+        y:{value:2,writable:true,enumerable:true},
+        z:{value:2,writable:true,enumerable:true},
+        x:{
+            get:function(){return this._x},
+            set:function(val){
+                this._x = val;
+            }
+        }
+    })
+</script>
+</html>

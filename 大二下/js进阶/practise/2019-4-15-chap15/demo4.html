@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document——chap15</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //定义一个车（car）的对象，height，width，weight
+    //创建一个小轿车的对象，希望小轿车继承上边车的相关属性，自身具有color（颜色），seatNum（座位）属性
+    //实现方式：通过create方法和构造函数的方式
+
+    //1、通过create方法的方式：
+    var car = {
+        height: 150,
+        width: 200,
+        weight: 2000
+    }
+    var xiaojiaoche = Object.create(car);
+    xiaojiaoche.color="red";
+    xiaojiaoche.seatNum=4;
+    console.log(xiaojiaoche);
+    console.log(xiaojiaoche.height);//不在xiaojiaoche的自身上，而是在小轿车的__proto__原型链上
+
+    //2、构造函数的方式：
+    function createSmallCar(color,seatNum){
+        this.color=color;
+        this.seatNum=seatNum;
+    }
+    createSmallCar.prototype=car;
+    var smallCar = new createSmallCar("red",4);
+    console.log(smallCar);
+</script>
+</html>

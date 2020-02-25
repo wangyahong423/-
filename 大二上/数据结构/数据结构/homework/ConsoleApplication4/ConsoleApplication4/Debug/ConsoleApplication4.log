@@ -1,0 +1,8 @@
+﻿  Lab.cpp
+e:\软件学院-qqdownload\大二上\数据结构\homework\consoleapplication4\consoleapplication4\lab.cpp(22): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          e:\vs2012\vc\include\stdio.h(290) : 参见“scanf”的声明
+  ElemType.cpp
+  DynaSeqStack.cpp
+  DynaLnkQueue.cpp
+  正在生成代码...
+  ConsoleApplication4.vcxproj -> E:\软件学院-QQDownload\大二上\数据结构\homework\ConsoleApplication4\Debug\ConsoleApplication4.exe
